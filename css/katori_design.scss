@@ -52,6 +52,9 @@ header{
   margin: auto;
   width: 80vw;
   height: 70px;
+  @include md{
+    width: 90%;
+  }
   .nav-list{
     display: flex;
     width: 40%;
@@ -81,8 +84,8 @@ header{
 @include md{
   #nav-toggle {
     position: fixed;
-    top: 3%;
-    right: 10%;
+    top: 20px;
+    right: 5%;
     height: 32px;
     cursor: pointer;
     z-index: 1000;

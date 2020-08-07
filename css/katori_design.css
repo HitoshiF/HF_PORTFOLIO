@@ -20,18 +20,34 @@ header {
 }
 
 .nav-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: auto;
   width: 80vw;
   height: 70px;
 }
 
+@media (max-width: 769px) {
+  .nav-flex {
+    width: 90%;
+  }
+}
+
 .nav-flex .nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 40%;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 @media (max-width: 769px) {
@@ -43,6 +59,7 @@ header {
 .nav-flex .nav-list li a {
   font-size: 1.6rem;
   color: #EAEAEA;
+  -webkit-transition: color .6s ease;
   transition: color .6s ease;
 }
 
@@ -58,8 +75,8 @@ header {
 @media (max-width: 769px) {
   #nav-toggle {
     position: fixed;
-    top: 3%;
-    right: 10%;
+    top: 20px;
+    right: 5%;
     height: 32px;
     cursor: pointer;
     z-index: 1000;
@@ -75,7 +92,10 @@ header {
     display: block;
     background: #EAEAEA;
     position: absolute;
+    -webkit-transition: top .5s ease, -webkit-transform .6s ease-in-out;
+    transition: top .5s ease, -webkit-transform .6s ease-in-out;
     transition: transform .6s ease-in-out, top .5s ease;
+    transition: transform .6s ease-in-out, top .5s ease, -webkit-transform .6s ease-in-out;
   }
   #nav-toggle span:nth-child(1) {
     top: 0;
@@ -97,7 +117,8 @@ header {
   }
   .open #nav-toggle span:nth-child(1) {
     top: 15px;
-    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
   }
   .open #nav-toggle span:nth-child(2) {
     top: 15px;
@@ -106,7 +127,8 @@ header {
   }
   .open #nav-toggle span:nth-child(3) {
     top: 15px;
-    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
   }
   #gloval-nav {
     background: #FF2E63;
@@ -118,34 +140,53 @@ header {
     bottom: 0;
     z-index: 990;
     text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     visibility: hidden;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-size: 29px;
     opacity: 0;
+    -webkit-transition: opacity .6s ease, visibility .6s ease;
     transition: opacity .6s ease, visibility .6s ease;
   }
   #gloval-nav ul li {
     opacity: 0;
-    transform: translateX(200px);
+    -webkit-transform: translateX(200px);
+            transform: translateX(200px);
+    -webkit-transition: opacity .2s ease, -webkit-transform .6s ease;
+    transition: opacity .2s ease, -webkit-transform .6s ease;
     transition: transform .6s ease, opacity .2s ease;
+    transition: transform .6s ease, opacity .2s ease, -webkit-transform .6s ease;
   }
   #gloval-nav ul li:nth-child(2) {
-    transition-delay: .15s;
+    -webkit-transition-delay: .15s;
+            transition-delay: .15s;
   }
   #gloval-nav ul li:nth-child(3) {
-    transition-delay: .3s;
+    -webkit-transition-delay: .3s;
+            transition-delay: .3s;
   }
   #gloval-nav ul li:nth-child(4) {
-    transition-delay: .45s;
+    -webkit-transition-delay: .45s;
+            transition-delay: .45s;
   }
   #gloval-nav ul li:nth-child(5) {
-    transition-delay: .6s;
+    -webkit-transition-delay: .6s;
+            transition-delay: .6s;
   }
   #gloval-nav ul li:nth-child(6) {
-    transition-delay: .75s;
+    -webkit-transition-delay: .75s;
+            transition-delay: .75s;
   }
   #gloval-nav ul li a {
     display: block;
@@ -153,6 +194,7 @@ header {
     font-size: 1.8rem;
     text-decoration: none;
     padding: 10px 0;
+    -webkit-transition: color .6s ease;
     transition: color .6s ease;
   }
   #gloval-nav ul li a:hover {
@@ -169,8 +211,12 @@ header {
   }
   .open #gloval-nav li {
     opacity: 1;
-    transform: translateX(0);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-transition: opacity .9s ease, -webkit-transform 1s ease;
+    transition: opacity .9s ease, -webkit-transform 1s ease;
     transition: transform 1s ease, opacity .9s ease;
+    transition: transform 1s ease, opacity .9s ease, -webkit-transform 1s ease;
   }
 }
 

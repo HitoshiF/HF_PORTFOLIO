@@ -24,6 +24,13 @@ time, mark, audio, video {
 
 html {
   line-height: 1;
+  overflow: auto;
+}
+
+body{
+  background: #252A34;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 ol, ul {
